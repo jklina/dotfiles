@@ -1,0 +1,21 @@
+[submodule "vim/bundle/vim-rails"]
+	path = vim/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "vim/bundle/vim-snipmate"]
+	path = vim/bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "vim/bundle/vim-tComment"]
+	path = vim/bundle/vim-tComment
+	url = https://github.com/vim-scripts/tComment.git
+[submodule "vim/bundle/vim-tlib"]
+	path = vim/bundle/vim-tlib
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "vim/bundle/vim-add-on-mw-utils"]
+	path = vim/bundle/vim-add-on-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/bundle/snipmate-snippets"]
+	path = vim/bundle/snipmate-snippets
+	url = https://github.com/honza/snipmate-snippets.git
+[submodule "vim/bundle/vim-command-t"]
+	path = vim/bundle/vim-command-t
+	url = git://git.wincent.com/command-t.git

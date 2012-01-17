@@ -1,0 +1,9 @@
+[user]
+	name = Josh Klina
+  email = joshua.klina@gmail.com
+[push]
+  default = tracking
+[format]
+  pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
+[core]
+	excludesfile = /Users/joshklina/.gitignore_global
