@@ -63,10 +63,3 @@ setopt CORRECT CORRECT_ALL
 
 # Enable extended globbing
 setopt EXTENDED_GLOB
-
-#auto cd
-setopt auto_cd
-cdpath=($HOME/Development $HOME/Dropbox/notesy)
-
-#rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

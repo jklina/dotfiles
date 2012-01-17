@@ -1,3 +1,7 @@
 # Vim Cache #
 ###################
 vim/.netrwhist
+
+# Ignoring .zshenv #
+###################
+zshenv

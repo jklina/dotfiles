@@ -1,10 +1,11 @@
-thoughtbot dotfiles
+Josh's dotfiles
 ===================
+_This originally started out as a fork of [thoughbot's](http://https://github.com/thoughtbot/dotfiles "thoughtbot's dotfiles") dotfiles, but I've made it my own and converted plugin management to pathogen._
 
 Install
 -------
 
-First, [fork this repo](https://github.com/thoughtbot/dotfiles#fork_box) on Github.
+First, [fork this repo](https://github.com/jklina/dotfiles) on Github.
 
 Then, clone your Github fork (replace "your-github-name" with your Github name) onto your laptop and install it:
 
@@ -19,33 +20,41 @@ There is configuration for `zsh` so switch your shell from the default `bash` to
 
     chsh -s /bin/zsh
 
+Since this configuration uses Pathogen to manage Vim's plugins use git submodules, you'll also have to initialize the submodules
+
+    git submodule init
+
+This will download all the submodules from git. You can update the Vim plugins using git's submodule management by running:
+
+    git submodule update
+
 Why fork?
 ---------
 
 dotfiles are fairly personal. You should be able to modify your dotfiles, and save them in version control in your fork.
 
-However, the thoughtbot folks are often tweaking these dotfiles and you want to be able to get those updates.
+However, these dotfiles may be modified in the future and you want to be able to get those updates.
 
-So, your master branch is meant for your customizations and use the `upstream` branch to get thoughtbot's updates.
+So, your master branch is meant for your customizations and use the `upstream` branch to get updates to this configuration.
 
 Set up the upstream branch
 --------------------------
 
 You only have to do this once:
 
-    git remote add upstream git@github.com:thoughtbot/dotfiles.git
+    git remote add upstream git@github.com:jklina/dotfiles.git
     git fetch upstream
     git checkout -b upstream upstream/master
 
 Update thoughtbot's changes into your customizations
 ----------------------------------------------------
 
-You will want to customize your environment. We suggest making changes in files that are not in thoughtbot's files.
+You will want to customize your environment. We suggest making changes in files that are not in this repository's core files.
 
 For example, to customize your `zsh` config, make your changes in `~/.zshenv`:
 
     # RVM
-    [[ -s '/Users/croaky/.rvm/scripts/rvm' ]] && source '/Users/croaky/.rvm/scripts/rvm'
+    [[ -s '/Users/jklina/.rvm/scripts/rvm' ]] && source '/Users/jklina/.rvm/scripts/rvm'
 
     # recommended by brew doctor
     export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
