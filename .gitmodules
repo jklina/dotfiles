@@ -19,3 +19,9 @@
 [submodule "vim/bundle/vim-command-t"]
 	path = vim/bundle/vim-command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "vim/bundle/vim-jade"]
+	path = vim/vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "vim/bundle/vim-stylus"]
+	path = vim/bundle/vim-stylus
+	url = https://github.com/wavded/vim-stylus.git
