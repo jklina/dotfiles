@@ -46,8 +46,49 @@ You only have to do this once:
     git fetch upstream
     git checkout -b upstream upstream/master
 
-Update thoughtbot's changes into your customizations
-----------------------------------------------------
+Adding a plugin
+---------------
+
+I add plugins by adding them as submodules in my repository. That way they're easy to update. This can be done with the following command:
+
+`git submodule add [Module's git URL] vim/bundle/[Module folder name]`
+
+Once the module is added you have to initialize it:
+
+`git submodule init`
+
+Updating a plugin
+-----------------
+
+To update a plugin/submodule, you must first navigate to the directory of the submodule:
+
+`cd vim/bundle/[module name]`
+
+Then checkout the latest version of the plugin:
+
+`git checkout master`
+
+and pull in the changes:
+
+`git pull origin master`
+
+Finally, you'll have to go back to the root directory and commit the changes to the submodule to the root project, so in the dotfiles directory:
+
+`git add vim/bundle/[module name]`
+`git commit -m "Updating submodule [module name] to latest version"`
+`git push`
+
+Removing a plugin
+-----------------
+
+To remove a plugin/submodule you have to remove reference from the `.gitmodules` and the `.git/config` files.
+
+Then remove the submodule from your repository:
+
+`git rm -cached vim/bundle/[module name]`
+
+Customizing your environment
+----------------------------
 
 You will want to customize your environment. We suggest making changes in files that are not in this repository's core files.
 
@@ -61,7 +102,7 @@ For example, to customize your `zsh` config, make your changes in `~/.zshenv`:
 
 Commit those kinds of things in your master branch.
 
-Then, each time you want to update thoughtbot's changes.
+Then, each time you want to update this repo's changes.
 
     git checkout upstream
     git pull
