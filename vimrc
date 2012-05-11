@@ -93,3 +93,6 @@ let g:ctrlp_working_path_mode = 0
 
 " Pathogen configuration
 call pathogen#infect()
+
+" Powerline Config
+let g:Powerline_symbols = 'fancy'

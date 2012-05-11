@@ -7,3 +7,5 @@
   pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
 [core]
 	excludesfile = /Users/joshklina/.gitignore_global
+	autocrlf = false
+	safecrlf = true

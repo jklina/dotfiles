@@ -85,7 +85,7 @@ To remove a plugin/submodule you have to remove reference from the `.gitmodules`
 
 Then remove the submodule from your repository:
 
-`git rm -cached vim/bundle/[module name]`
+`git rm --cached vim/bundle/[module name]`
 
 Customizing your environment
 ----------------------------
