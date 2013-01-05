@@ -46,7 +46,7 @@ You only have to do this once:
     git fetch upstream
     git checkout -b upstream upstream/master
 
-Adding a plugin
+Adding a Vim plugin
 ---------------
 
 I add plugins by adding them as submodules in my repository. That way they're easy to update. This can be done with the following command:
@@ -57,7 +57,7 @@ Once the module is added you have to initialize it:
 
 `git submodule init`
 
-Updating a plugin
+Updating a Vim plugin
 -----------------
 
 To update a plugin/submodule, you must first navigate to the directory of the submodule:
@@ -78,7 +78,7 @@ Finally, you'll have to go back to the root directory and commit the changes to 
 `git commit -m "Updating submodule [module name] to latest version"`
 `git push`
 
-Removing a plugin
+Removing a Vim plugin
 -----------------
 
 To remove a plugin/submodule you have to remove reference from the `.gitmodules` and the `.git/config` files.
@@ -86,6 +86,11 @@ To remove a plugin/submodule you have to remove reference from the `.gitmodules`
 Then remove the submodule from your repository:
 
 `git rm --cached vim/bundle/[module name]`
+
+Vim Powerline
+-------------
+
+Vim Powerline requires special fonts that contain glyphs necessary for different statuses on the line. See the [wiki](https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts)
 
 Customizing your environment
 ----------------------------
