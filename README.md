@@ -78,6 +78,15 @@ Finally, you'll have to go back to the root directory and commit the changes to 
 `git commit -m "Updating submodule [module name] to latest version"`
 `git push`
 
+Updating all git submodules
+---------------------------
+
+`git pull --recurse-submodules`
+
+and then checkout the commits
+
+`git submodule update --recursive`
+
 Removing a Vim plugin
 -----------------
 
