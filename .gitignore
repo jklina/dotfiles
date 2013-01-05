@@ -1,7 +1,10 @@
 # Vim Cache #
 ###################
 vim/.netrwhist
+*.sw*
 
 # Ignoring .zshenv #
 ###################
 zshenv
+
+.DS_Store

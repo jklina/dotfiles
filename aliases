@@ -34,9 +34,7 @@ alias gi="gem install"
 alias giv="gem install -v"
 
 # Rails
-alias migrate="bundle exec db:migrate db:test:prepare"
-alias remigrate="bundle exec db:migrate db:migrate:redo db:schema:dump db:test:prepare"
-alias remongrate="bundle exec mongoid:migrate mongoid:migrate:redo"
+alias migrate="rake db:migrate && rake db:test:prepare"
 
 # Heroku staging
 alias staging='heroku run console --remote staging'

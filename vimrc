@@ -6,6 +6,10 @@ set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
+set backspace=indent,eol,start "sets backspace to wrap backward
+set colorcolumn=80 "Sets a marker for where the 80th column is for proper style
+set clipboard=unnamed "Sets copy and pasting to clipboard
+set shell=zsh\ -li "Tells vim to use zsh
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -72,12 +76,6 @@ set complete=.,w,t
 " Tags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
-" Cucumber navigation commands
-autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
-" :Cuc my text (no quotes) -> runs cucumber scenarios containing "my text"
-command! -nargs=+ Cuc :!ack --no-heading --no-break <q-args> | cut -d':' -f1,2 | xargs bundle exec cucumber --no-color
-
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
@@ -96,3 +94,42 @@ call pathogen#infect()
 
 " Powerline Config
 let g:Powerline_symbols = 'fancy'
+
+" rspec mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+
+function! RunCurrentSpecFile()
+  if InSpecFile()
+    let l:command = "s " . @% . " -f documentation"
+    call SetLastSpecCommand(l:command)
+    call RunSpecs(l:command)
+  endif
+endfunction
+
+function! RunNearestSpec()
+  if InSpecFile()
+    let l:command = "s " . @% . " -l " . line(".") . " -f documentation"
+    call SetLastSpecCommand(l:command)
+    call RunSpecs(l:command)
+  endif
+endfunction
+
+function! RunLastSpec()
+  if exists("t:last_spec_command")
+    call RunSpecs(t:last_spec_command)
+  endif
+endfunction
+
+function! InSpecFile()
+  return match(expand("%"), "_spec.rb$") != -1
+endfunction
+
+function! SetLastSpecCommand(command)
+  let t:last_spec_command = a:command
+endfunction
+
+function! RunSpecs(command)
+  execute ":w\|!clear && echo " . a:command . " && echo && " . a:command
+endfunction
