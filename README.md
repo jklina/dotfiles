@@ -101,6 +101,16 @@ Vim Powerline
 
 Vim Powerline requires special fonts that contain glyphs necessary for different statuses on the line. See the [wiki](https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts)
 
+Solarized Color Scheme
+----------------------
+
+While the solarized theme is configured in the vimrc file and installed as a plugin, to get the best colors its recommended to acquire the palette for your terminal emulator. More info [here](http://ethanschoonover.com/solarized)
+
+TODO
+----
+
+Bring back snippets, especially for markdown.
+
 Customizing your environment
 ----------------------------
 
