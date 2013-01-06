@@ -1,3 +1,6 @@
+" Pathogen configuration
+call pathogen#infect()
+
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
 set nowritebackup
@@ -9,7 +12,6 @@ set laststatus=2  " Always display the status line
 set backspace=indent,eol,start "sets backspace to wrap backward
 set colorcolumn=80 "Sets a marker for where the 80th column is for proper style
 set clipboard=unnamed "Sets copy and pasting to clipboard
-set shell=zsh\ -li "Tells vim to use zsh
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -53,7 +55,8 @@ if executable("ack")
 endif
 
 " Color scheme
-colorscheme vividchalk
+set background=dark
+colorscheme solarized
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -88,9 +91,6 @@ let g:html_indent_tags = 'li\|p'
 
 " Tell ctrlp to search project directory
 let g:ctrlp_working_path_mode = 0
-
-" Pathogen configuration
-call pathogen#infect()
 
 " Powerline Config
 let g:Powerline_symbols = 'fancy'
