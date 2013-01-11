@@ -2,8 +2,6 @@
 call pathogen#infect()
 
 set nocompatible  " Use Vim settings, rather then Vi settings
-set nobackup
-set nowritebackup
 set history=50
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
@@ -103,3 +101,8 @@ set winwidth=84
 set winheight=5
 set winminheight=5
 set winheight=999
+
+" Store temporary files in a central spot
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
