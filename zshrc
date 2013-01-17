@@ -12,3 +12,6 @@ fi
 
 # Customize to your needs...
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+#aliases
+alias use="/bin/ls -1A | tr '\n' '\0' | xargs -0 du -sm | sort -n"
