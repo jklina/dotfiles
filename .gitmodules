@@ -55,3 +55,6 @@
 [submodule "vim/bundle/vim-rspec"]
 	path = vim/bundle/vim-rspec
 	url = git@github.com:jklina/vim-rspec.git
+[submodule "vim/bundle/vim-snippets"]
+	path = vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
