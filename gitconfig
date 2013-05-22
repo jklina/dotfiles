@@ -9,3 +9,4 @@
 	excludesfile = /Users/joshklina/.gitignore_global
 	autocrlf = false
 	safecrlf = true
+	editor = vim
