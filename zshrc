@@ -15,3 +15,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #aliases
 alias use="/bin/ls -1A | tr '\n' '\0' | xargs -0 du -sm | sort -n"
+alias rdbm="rake db:migrate && rake db:migrate RAILS_ENV=test"
