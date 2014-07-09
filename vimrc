@@ -106,7 +106,7 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Rspec.vim mappings
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+let g:rspec_command = 'call Send_to_Tmux("bin/rspec {spec}\n")'
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
@@ -114,3 +114,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 " Minitest mappings
 map <Leader>m :w <bar> call Send_to_Tmux("ruby ".expand("%")."\n")<CR>
+
+" For Airline
+set laststatus=2
+let g:airline_theme = 'solarized'

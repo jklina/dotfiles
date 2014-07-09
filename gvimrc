@@ -12,4 +12,5 @@ if filereadable($HOME . "/.gvimrc.local")
   source ~/.gvimrc.local
 endif
 
-set guifont=Menlo\ for\ Powerline
+" set guifont=Menlo\ for\ Powerline
+set laststatus=2
