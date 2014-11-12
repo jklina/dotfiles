@@ -64,3 +64,6 @@
 [submodule "zprezto"]
 	path = zprezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "vim/bundle/vim-tComment"]
+	path = vim/bundle/vim-tComment
+	url = https://github.com/tomtom/tcomment_vim.git
