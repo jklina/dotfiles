@@ -1,134 +1,79 @@
-Josh's dotfiles
+Configuration Files
 ===================
-_This originally started out as a fork of [thoughbot's](http://https://github.com/thoughtbot/dotfiles "thoughtbot's dotfiles") dotfiles, but I've made it my own and converted plugin management to pathogen._
 
-Install
+Zsh has several system-wide and user-local configuration files.
+
+Prezto has one user-local configuration file.
+
+System-wide configuration files are installation-dependent but are installed
+in */etc* by default.
+
+User-local configuration files have the same name as their global counterparts
+but are prefixed with a dot (hidden). Zsh looks for these files in the path
+stored in the `$ZDOTDIR` environmental variable. However, if said variable is
+not defined, Zsh will use the user's home directory.
+
+File Descriptions
+-----------------
+
+The configuration files are read in the following order:
+
+  01. /etc/zshenv
+  02. ~/.zshenv
+  03. /etc/zprofile
+  04. ~/.zprofile
+  05. /etc/zshrc
+  06. ~/.zshrc
+  07. ~/.zpreztorc
+  08. /etc/zlogin
+  09. ~/.zlogin
+  10. ~/.zlogout
+  11. /etc/zlogout
+
+### zshenv
+
+This file is sourced by all instances of Zsh, and thus, it should be kept as
+small as possible and should only define environment variables.
+
+### zprofile
+
+This file is similar to zlogin, but it is sourced before zshrc. It was added
+for [KornShell][1] fans. See the description of zlogin below for what it may
+contain.
+
+zprofile and zlogin are not meant to be used concurrently but can be done so.
+
+### zshrc
+
+This file is sourced by interactive shells. It should define aliases,
+functions, shell options, and key bindings.
+
+### zpreztorc
+
+This file configures Prezto.
+
+### zlogin
+
+This file is sourced by login shells after zshrc, and thus, it should contain
+commands that need to execute at login. It is usually used for messages such as
+[fortune][2], [msgs][3], or for the creation of files.
+
+This is not the file to define aliases, functions, shell options, and key
+bindings. It should not change the shell environment.
+
+### zlogout
+
+This file is sourced by login shells during logout. It should be used for
+displaying messages and the deletion of files.
+
+Authors
 -------
 
-First, [fork this repo](https://github.com/jklina/dotfiles) on Github.
+*The authors of these files should be contacted via the [issue tracker][4].*
 
-Then, clone your Github fork (replace "your-github-name" with your Github name) onto your laptop and install it:
+  - [Sorin Ionescu](https://github.com/sorin-ionescu)
 
-    git clone git@github.com:your-github-name/dotfiles.git
-    cd dotfiles
-    ./install.sh
-
-This will create symlinks for all config files in your home directory. You can
-safely run this file multiple times to update.
-
-There is configuration for `zsh` so switch your shell from the default `bash` to `zsh` on OS X:
-
-    chsh -s /bin/zsh
-
-Since this configuration uses Pathogen to manage Vim's plugins use git submodules, you'll also have to initialize the submodules
-
-    git submodule init
-
-This will download all the submodules from git. You can update the Vim plugins using git's submodule management by running:
-
-    git submodule update
-
-Why fork?
----------
-
-dotfiles are fairly personal. You should be able to modify your dotfiles, and save them in version control in your fork.
-
-However, these dotfiles may be modified in the future and you want to be able to get those updates.
-
-So, your master branch is meant for your customizations and use the `upstream` branch to get updates to this configuration.
-
-Set up the upstream branch
---------------------------
-
-You only have to do this once:
-
-    git remote add upstream git@github.com:jklina/dotfiles.git
-    git fetch upstream
-    git checkout -b upstream upstream/master
-
-Adding a Vim plugin
----------------
-
-I add plugins by adding them as submodules in my repository. That way they're easy to update. This can be done with the following command:
-
-`git submodule add [Module's git URL] vim/bundle/[Module folder name]`
-
-Once the module is added you have to initialize it:
-
-`git submodule init`
-
-Updating a Vim plugin
------------------
-
-To update a plugin/submodule, you must first navigate to the directory of the submodule:
-
-`cd vim/bundle/[module name]`
-
-Then checkout the latest version of the plugin:
-
-`git checkout master`
-
-and pull in the changes:
-
-`git pull origin master`
-
-Finally, you'll have to go back to the root directory and commit the changes to the submodule to the root project, so in the dotfiles directory:
-
-`git add vim/bundle/[module name]`
-`git commit -m "Updating submodule [module name] to latest version"`
-`git push`
-
-Updating all git submodules
----------------------------
-
-`git pull --recurse-submodules`
-
-and then checkout the commits
-
-`git submodule update --recursive`
-
-Removing a Vim plugin
------------------
-
-To remove a plugin/submodule you have to remove reference from the `.gitmodules` and the `.git/config` files.
-
-Then remove the submodule from your repository:
-
-`git rm --cached vim/bundle/[module name]`
-
-Vim Powerline
--------------
-
-Vim Powerline requires special fonts that contain glyphs necessary for different statuses on the line. See the [wiki](https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts)
-
-Solarized Color Scheme
-----------------------
-
-While the solarized theme is configured in the vimrc file and installed as a plugin, to get the best colors its recommended to acquire the palette for your terminal emulator. More info [here](http://ethanschoonover.com/solarized)
-
-TODO
-----
-
-Bring back snippets, especially for markdown.
-
-Customizing your environment
-----------------------------
-
-You will want to customize your environment. We suggest making changes in files that are not in this repository's core files.
-
-For example, to customize your `zsh` config, make your changes in `~/.zshenv`:
-
-    # RVM
-    [[ -s '/Users/jklina/.rvm/scripts/rvm' ]] && source '/Users/jklina/.rvm/scripts/rvm'
-
-    # recommended by brew doctor
-    export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-
-Commit those kinds of things in your master branch.
-
-Then, each time you want to update this repo's changes.
-
-    git checkout upstream
-    git pull
-    git checkout master
-    git rebase upstream
+[1]: http://www.kornshell.com
+[2]: http://en.wikipedia.org/wiki/Fortune_(Unix)
+[3]: http://www.manpagez.com/man/1/msgs
+[4]: https://github.com/sorin-ionescu/prezto/issues
