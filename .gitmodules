@@ -31,9 +31,6 @@
 [submodule "vim/bundle/vim-cucumber"]
 	path = vim/bundle/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber.git
-[submodule "zprezto"]
-	path = zprezto
-	url = https://github.com/sorin-ionescu/prezto.git
 [submodule "vim/bundle/tlib_vim"]
 	path = vim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
@@ -64,3 +61,6 @@
 [submodule "vim/bundle/vim-emblem"]
 	path = vim/bundle/vim-emblem
 	url = https://github.com/heartsentwined/vim-emblem
+[submodule "vim/bundle/vim-less"]
+	path = vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less
