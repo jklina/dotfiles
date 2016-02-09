@@ -16,7 +16,7 @@ fi
 # export PATH="$HOME/.rbenv/bin:$PATH"
 path+=("$HOME/.rbenv/bin:$PATH")
 path+=('/Applications/MAMP/Library/bin/')
-path+=('/Applications/Postgres.app/Contents/Versions/9.3/bin')
+path+=('/Applications/Postgres.app/Contents/Versions/9.4/bin')
 eval "$(rbenv init -)"
 
 #!/bin/sh
