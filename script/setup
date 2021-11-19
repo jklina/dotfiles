@@ -3,13 +3,13 @@
 cd $HOME
 
 # No thank you
-rm -rf .oh-my-bash
-rm -rf .oh-my-zsh
-rm .zshrc
+sudo rm -rf .oh-my-bash
+sudo rm -rf .oh-my-zsh
+sudo rm .zshrc
 
-sudo apt-get install -y fish pick neovim tmux ruby curl git jq
+sudo apt-get install -y fish pick neovim tmux ruby curl git jq ripgrep
 
-sudo gem install tmuxinator
+cp -r ../.config/ ~/
 
 sudo chsh -s /usr/bin/fish
-
+fish
