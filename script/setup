@@ -5,7 +5,6 @@ sudo rm -rf ~/.oh-my-zsh
 sudo rm ~/.zshrc
 
 sudo apt-get install -y fish pick neovim tmux ruby curl git jq ripgrep
+sudo chsh -s /usr/bin/fish
 
 cp -r /workspaces/.codespaces/.persistedshare/dotfiles/.config/ ~/
-
-sudo chsh -s /usr/bin/fish codespace
