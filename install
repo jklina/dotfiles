@@ -11,5 +11,5 @@ sudo apt-get install -y fish pick neovim tmux ruby curl git jq
 
 sudo gem install tmuxinator
 
-chsh -s /usr/bin/fish
+sudo chsh -s /usr/bin/fish
 
