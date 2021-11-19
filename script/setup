@@ -1,14 +1,12 @@
 #!/bin/sh
+export USERNAME=`whoami`
 
-cd $HOME
-
-# No thank you
-sudo rm -rf .oh-my-bash
-sudo rm -rf .oh-my-zsh
-sudo rm .zshrc
+sudo rm -rf ~/.oh-my-bash
+sudo rm -rf ~/.oh-my-zsh
+sudo rm ~/.zshrc
 
 sudo apt-get install -y fish pick neovim tmux ruby curl git jq ripgrep
 
 cp -r /workspaces/.codespaces/.persistedshare/dotfiles/.config/ ~/
 
-sudo chsh -s /usr/bin/fish
+sudo chsh -s /usr/bin/fish $USERNAME
