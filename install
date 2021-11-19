@@ -7,9 +7,9 @@ rm -rf .oh-my-bash
 rm -rf .oh-my-zsh
 rm .zshrc
 
-apt-get install -y fish pick neovim tmux ruby
+sudo apt-get install -y fish pick neovim tmux ruby curl git jq
 
-gem install tmuxinator
+sudo gem install tmuxinator
 
 chsh -s /usr/bin/fish
 
