@@ -6,6 +6,8 @@ sudo rm ~/.zshrc
 
 sudo apt-get install -y fish pick neovim tmux ruby curl git jq ripgrep
 
+echo "Copying dotfiles.."
 cp -r /workspaces/.codespaces/.persistedshare/dotfiles/.config/ ~/
 
-chsh -s /usr/bin/fish
+echo "Setting default shell to fish.."
+sudo chsh -s /usr/bin/fish
