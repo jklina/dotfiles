@@ -9,4 +9,4 @@
 	excludesfile = ~/.gitignore_global
 	autocrlf = false
 	safecrlf = true
-	editor = vim
+	editor = nvim

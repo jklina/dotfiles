@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cd $HOME
+
+# No thank you
+rm -rf .oh-my-bash
+rm -rf .oh-my-zsh
+rm .zshrc
+
+apt-get install -y fish pick neovim tmux ruby
+
+gem install tmuxinator
+
+chsh -s /usr/bin/fish
+
