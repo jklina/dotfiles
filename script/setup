@@ -1,5 +1,4 @@
 #!/bin/sh
-export USERNAME=`whoami`
 
 sudo rm -rf ~/.oh-my-bash
 sudo rm -rf ~/.oh-my-zsh
@@ -9,4 +8,4 @@ sudo apt-get install -y fish pick neovim tmux ruby curl git jq ripgrep
 
 cp -r /workspaces/.codespaces/.persistedshare/dotfiles/.config/ ~/
 
-sudo chsh -s /usr/bin/fish $USERNAME
+sudo chsh -s /usr/bin/fish codespace
