@@ -10,4 +10,4 @@ echo "Copying dotfiles.."
 cp -r /workspaces/.codespaces/.persistedshare/dotfiles/.config/ ~/
 
 echo "Setting default shell to fish.."
-sudo chsh -s /usr/bin/fish
+sudo chsh -s /usr/bin/fish codespace
