@@ -13,4 +13,4 @@ cp -r /workspaces/.codespaces/.persistedshare/dotfiles/.config/ ~/
 curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Setting default shell to fish.."
-sudo chsh -s /usr/bin/fish codespace
+sudo chsh -s /usr/bin/fish
